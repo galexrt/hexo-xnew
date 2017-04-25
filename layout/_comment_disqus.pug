@@ -1,0 +1,15 @@
+section.comment
+  div(id="disqus_thread")
+noscript Please enable JavaScript to view the
+  a.article(href="https://disqus.com/?ref_noscript")
+    comments powered by Disqus.
+
+script!= "var _shortName = \"" + theme.disqus["short_name"] + "\";"
+script.
+    var disqus_shortname = _shortName; // required: replace example with your forum shortname
+    (function() {
+        var d = document, s = d.createElement('script'); s.type = 'text/javascript'; s.async = true;
+        s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
