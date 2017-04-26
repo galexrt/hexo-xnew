@@ -3,11 +3,14 @@ section.copyright
   = full_date(new Date(), ' YYYY')
   a(href= config.root)= config.author
 section.intro
-  | 由
+  | Powered by&nbsp;
   a(href='https://hexo.io/') Hexo
-  | 驱动&middot;挂载
+  | &nbsp;&middot; Using&nbsp;
   a(href='https://github.com/xadillax/hexo-xnew') X'new
-  | 主题
+  | &nbsp;Design
   if config.feed && config.feed.url
-    | &middot;
+    | &nbsp;&middot;&nbsp;
     a(href= config.feed.url) RSS Feed
+  else if theme.icon.rss
+    | &nbsp;&middot;&nbsp;
+    a(href= theme.icon.rss) RSS Feed

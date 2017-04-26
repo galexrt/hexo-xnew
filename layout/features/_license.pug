@@ -1,0 +1,13 @@
+div.license-box
+  p
+    | The following license is used for this
+    if is_post()
+      | &nbsp;post:
+    else if is_page()
+      | &nbsp;page:
+    if page && page.license
+      | &nbsp;#{page.license}.
+    if page && page.licenseurl
+      br
+      | For more information about this license, please visit&nbsp;
+      a(href="#{page.licenseurl}",title= page.license + " Link")

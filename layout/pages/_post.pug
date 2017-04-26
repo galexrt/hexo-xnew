@@ -1,0 +1,41 @@
+article.full
+  h1= page.title
+  span.post-meta
+    | Written at
+    time= full_date(new Date(page.date), ' YYYY-MM-DD HH:mm')
+    if page.updated
+      | &nbsp;· Updated at
+      time= full_date(new Date(page.updated), ' YYYY-MM-DD HH:mm')
+    if theme.show_post_categories && page.categories && page.categories.toArray().length !== 0
+      br
+      | Categories:&nbsp;
+      for category, index in page.categories.sort("date", "desc").toArray()
+        |「
+        a(href= config.root + category.path) #{category.name} (#{category.posts.length})
+        |」
+      if theme.show_post_tags && page.tags && page.tags.toArray().length !== 0
+        |&nbsp;·&nbsp;
+    if theme.show_post_tags && page.tags && page.tags.toArray().length !== 0
+      if !theme.show_post_categories || (page.categories && page.categories.toArray().length === 0)
+        br
+      | Tags:&nbsp;
+      for tag, index in page.tags.sort("date", "desc").toArray()
+        |「
+        a(href= config.root + tag.path) #{tag.name} (#{tag.posts.length})
+        |」
+  if !page.toc || true
+    div.article-toc
+      strong Table of Contents
+      != toc(page.content)
+  != page.content
+  if page.license
+    hr
+    include ../features/_license.pug
+  hr
+  if !page.comments || true
+    if theme.duoshuo
+      include ../features/comments/_comment_duoshuo.pug
+    if theme.disqus
+      include ../features/comments/_comment_disqus.pug
+  footer
+    include ../partial/_footer.pug

@@ -1,0 +1,25 @@
+article.full
+  h1= title
+  - let lastyear = 0
+  for post, index in site.posts.sort("date", "desc").toArray()
+    if lastyear !== post.date.format("YYYY")
+      if index !== 0
+        | </ul>
+      - lastyear = post.date.format("YYYY")
+      h4= lastyear
+      | <ul>
+      li
+        |「
+        a(href= config.root + post.path) #{post.title}
+        | 」·
+        time= full_date(new Date(post.date), ' MM-DD')
+    else
+      li
+        |「
+        a(href= config.root + post.path) #{post.title}
+        |」·
+        time= full_date(new Date(post.date), ' MM-DD')
+  if site.posts.toArray().length !== 0
+    | </ul >
+  footer
+    include ../partial/_footer.pug

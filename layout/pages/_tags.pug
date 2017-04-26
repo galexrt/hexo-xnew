@@ -1,0 +1,12 @@
+article.full
+  h1= title
+  | <ul>
+  for tag, index in site.tags.sort("date", "desc").toArray()
+    li
+      |「
+      a(href= config.root + tag.path) #{tag.name} (#{tag.posts.length})
+      |」
+  if site.tags.toArray().length !== 0
+    | </ul >
+  footer
+    include ../partial/_footer.pug

@@ -1,0 +1,24 @@
+article.full
+  h1= page.title
+  if page.updated
+    span.post-meta
+      | Written at
+      time= full_date(new Date(page.date), ' YYYY-MM-DD HH:mm')
+      | Last Updated
+      time= full_date(new Date(page.date), ' YYYY-MM-DD HH:mm')
+  if page.toc || (page.toc === undefined)
+    div.article-toc
+      strong Table of Contents
+      != toc(page.content)
+  != page.content
+  if page.license
+    hr
+    include ../features/_license.pug
+  hr
+  if !page.comments || true
+    if theme.duoshuo
+      include ../features/comments/_comment_duoshuo.pug
+    if theme.disqus
+      include ../features/comments/_comment_disqus.pug
+  footer
+    include ../partial/_footer.pug

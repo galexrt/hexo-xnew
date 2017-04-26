@@ -1,0 +1,13 @@
+article.full
+  h1= title
+  | <ul>
+  for category, index in site.categories.sort("date", "desc").toArray()
+    li
+      |「
+      a(href= config.root + category.path) #{category.name} (#{category.posts.length})
+      |」
+
+  if site.categories.toArray().length !== 0
+    | </ul >
+  footer
+    include ../partial/_footer.pug

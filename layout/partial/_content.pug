@@ -1,0 +1,20 @@
+if page["current_url"] && page["current_url"].match(/^archives\/.+/g) === 0
+  script.
+    window.location.href = "#{config.url}#{config.root}/archives";
+if is_home()
+  include ../pages/_home.pug
+
+if is_archive()
+  include ../pages/_archive.pug
+else if is_page() && [ 'tags' ].indexOf(page.title.toLowerCase()) >= 0
+  include ../pages/_tags.pug
+else if is_tag()
+  include ../pages/_tag.pug
+else if is_page() && [ 'categories' ].indexOf(page.title.toLowerCase()) >= 0
+  include ../pages/_categories.pug
+else if is_category()
+  include ../pages/_category.pug
+else if is_page()
+  include ../pages/_page.pug
+else if is_post()
+  include ../pages/_post.pug

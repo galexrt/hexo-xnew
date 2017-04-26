@@ -1,3 +1,5 @@
+meta(charset="utf-8")
+meta(http-equiv="X-UA-Compatible" content="IE=edge")
 -
     var title = page.title;
     if(is_archive()) {
@@ -33,8 +35,6 @@ if config.feed && config.feed.type === "atom"
 if theme.favicon
   link(rel="icon" href=config.root + theme.favicon)
 
-meta(charset="utf-8")
-meta(http-equiv="X-UA-Compatible" content="IE=edge")
 meta(name="viewport" content="width=device-width, initial-scale=1")
 title= (title ? title : config.title) + (config.subtitle ? " · " + config.subtitle : "")
 
@@ -43,3 +43,4 @@ link(rel="stylesheet" type="text/css" href="//cdn.bootcss.com/webicons/2.0.0/web
 link(rel="stylesheet" type="text/css" href="//cdn.bootcss.com/Han/3.3.0/han.min.css")
 link(rel="stylesheet" type="text/css" href= config.root + "styles/screen.css")
 link(rel="stylesheet" type="text/css" href="//cdn.bootcss.com/highlight.js/9.9.0/styles/gruvbox-dark.min.css")
+link(rel="stylesheet" type="text/css" href= config.root + "font/css/font-awesome.min.css")

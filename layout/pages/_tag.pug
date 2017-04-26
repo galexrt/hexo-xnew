@@ -1,0 +1,22 @@
+article.full
+  h1= title
+  a(href=config.root + theme.tags_path) « Back to Tags
+  each post in page.posts.toArray()
+    article.item
+      a.article(href= config.root + post.path)
+        h2.home-title= post.title
+      span.post-meta
+        | Written at
+        time= full_date(new Date(post.date), ' YYYY-MM-DD HH:mm')
+        |&nbsp;· Last updated at
+        time= full_date(new Date(post.updated), ' YYYY-MM-DD HH:mm')
+      if post.description
+        p.post-excerpt= post.description
+      else if post.excerpt
+        p.post-excerpt= strip_html(post.excerpt).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 140)
+      else
+        p.post-excerpt= strip_html(post.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 140)
+  div.pagination
+    != paginator({ prev_text: __('prev'), next_text: __('next') })
+  footer
+    include ../partial/_footer.pug
