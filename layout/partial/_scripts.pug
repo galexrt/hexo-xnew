@@ -5,7 +5,7 @@ script(src= config.root + 'scripts/highlight.pack.js')
 script!= "var _site_root = \"" + config.root + "\";"
 script.
     $(function() {
-        $("header").backstretch(_site_root + "/images/header.jpeg");
+        $("header").backstretch(_site_root + "images/header.jpeg");
 
         $("figure.highlight").each(function(i, block) {
             $(block).removeClass("highlight");
