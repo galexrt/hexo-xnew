@@ -18,5 +18,5 @@ article.full
         p.post-excerpt= strip_html(post.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 140)
   div.pagination
     != paginator({ prev_text: __('prev'), next_text: __('next') })
-  footer
-    include ../partial/_footer.pug
+footer
+  include ../partial/_footer.pug

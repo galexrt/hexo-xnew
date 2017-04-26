@@ -1,5 +1,7 @@
 article.full
-  h1= page.title
+  div
+    h1(style="display:inline;")= page.title
+    include ../features/_permalink.pug
   if page.updated
     span.post-meta
       | Written at
@@ -20,5 +22,5 @@ article.full
       include ../features/comments/_comment_duoshuo.pug
     if theme.disqus
       include ../features/comments/_comment_disqus.pug
-  footer
-    include ../partial/_footer.pug
+footer
+  include ../partial/_footer.pug

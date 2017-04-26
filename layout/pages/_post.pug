@@ -1,29 +1,37 @@
 article.full
-  h1= page.title
+  div
+    h1(style="display:inline;")= page.title
+    include ../features/_permalink.pug
   span.post-meta
     | Written at
     time= full_date(new Date(page.date), ' YYYY-MM-DD HH:mm')
     if page.updated
-      | &nbsp;· Updated at
+      | &nbsp;· Last Updated at
       time= full_date(new Date(page.updated), ' YYYY-MM-DD HH:mm')
-    if theme.show_post_categories && page.categories && page.categories.toArray().length !== 0
+    if theme.show_post_categories
       br
       | Categories:&nbsp;
-      for category, index in page.categories.sort("date", "desc").toArray()
-        |「
-        a(href= config.root + category.path) #{category.name} (#{category.posts.length})
-        |」
-      if theme.show_post_tags && page.tags && page.tags.toArray().length !== 0
+      if page.categories.toArray().length !== 0
+        for category, index in page.categories.sort("date", "desc").toArray()
+          |「
+          a(href= config.root + category.path) #{category.name} (#{category.posts.length})
+          |」
+      else
+        |「No Categories」
+      if theme.show_post_tags
         |&nbsp;·&nbsp;
-    if theme.show_post_tags && page.tags && page.tags.toArray().length !== 0
-      if !theme.show_post_categories || (page.categories && page.categories.toArray().length === 0)
+    if theme.show_post_tags
+      if !theme.show_post_categories
         br
       | Tags:&nbsp;
-      for tag, index in page.tags.sort("date", "desc").toArray()
-        |「
-        a(href= config.root + tag.path) #{tag.name} (#{tag.posts.length})
-        |」
-  if !page.toc || true
+      if page.tags.toArray().length !== 0
+        for tag, index in page.tags.sort("date", "desc").toArray()
+          |「
+          a(href= config.root + tag.path) #{tag.name} (#{tag.posts.length})
+          |」
+      else
+        |「No Tags」
+  if page.toc || (page.toc === undefined)
     div.article-toc
       strong Table of Contents
       != toc(page.content)
@@ -37,5 +45,5 @@ article.full
       include ../features/comments/_comment_duoshuo.pug
     if theme.disqus
       include ../features/comments/_comment_disqus.pug
-  footer
-    include ../partial/_footer.pug
+footer
+  include ../partial/_footer.pug

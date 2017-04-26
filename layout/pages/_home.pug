@@ -7,6 +7,32 @@ each post in page.posts.toArray()
       time= full_date(new Date(post.date), ' YYYY-MM-DD HH:mm')
       |&nbsp;· Last updated at
       time= full_date(new Date(post.updated), ' YYYY-MM-DD HH:mm')
+      if post.updated
+        | &nbsp;· Updated at
+        time= full_date(new Date(post.updated), ' YYYY-MM-DD HH:mm')
+      if theme.show_home_post_categories
+        br
+        | Categories:&nbsp;
+        if post.categories.toArray().length !== 0
+          for category, index in post.categories.sort("date", "desc").toArray()
+            |「
+            a(href= config.root + category.path) #{category.name} (#{category.posts.length})
+            |」
+        else
+          |「No Categories」
+        if theme.show_home_post_tags
+          |&nbsp;·&nbsp;
+      if theme.show_home_post_tags
+        if !theme.show_home_post_categories
+          br
+        | Tags:&nbsp;
+        if post.tags.toArray().length !== 0
+          for tag, index in post.tags.sort("date", "desc").toArray()
+            |「
+            a(href= config.root + tag.path) #{tag.name} (#{tag.posts.length})
+            |」
+        else
+          |「No Tags」
     if post.description
       p.post-excerpt= post.description
     else if post.excerpt
