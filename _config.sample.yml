@@ -1,4 +1,5 @@
 logo: /images/avatar.gif
+favicon: images/favicon.png
 han_type: zh-Hant
 menu:
   Home: /
@@ -17,8 +18,11 @@ icon:
   steam: YOUR_STEAM_PROFILE_ID
   weibo: YOUR_WEIBO_ID
   zhihu: YOUR_ZHIHU_ID
+  xing:
 
 category_path: categories
 tags_path: tags
 show_post_tags: true
 show_post_categories: true
+show_home_post_tags: true
+show_home_post_categories: true
