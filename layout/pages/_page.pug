@@ -17,7 +17,7 @@ article.full
     hr
     include ../features/_license.pug
   hr
-  if !page.comments || true
+  if page.comments || (page.comments === undefined)
     if theme.duoshuo
       include ../features/comments/_comment_duoshuo.pug
     if theme.disqus
