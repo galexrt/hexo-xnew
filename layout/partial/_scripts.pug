@@ -15,6 +15,7 @@ script.
         });
         $(".__tobehl").each(function(i, block) {
             hljs.highlightBlock(block);
+            $(block).addClass("hljs");
         });
 
         $("article.full img").each(function() {
