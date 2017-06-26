@@ -26,3 +26,7 @@ show_post_tags: true
 show_post_categories: true
 show_home_post_tags: true
 show_home_post_categories: true
+
+googleanalytics:
+
+backgrounds: "images/header.jpeg"
