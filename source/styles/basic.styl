@@ -1,0 +1,81 @@
+a
+  color: #1f1ca2;
+i.fa
+  padding-bottom 0
+  border-bottom 0
+  font-family FontAwesome
+article.full
+  a
+    color $link-color
+    transition color ease .3s
+    &:hover
+      color $link-article-color
+      border-bottom 1px dotted
+  hr
+    display block
+    height 1px
+    border 0
+    border-top darken($bg-color, 15%) 1px solid
+    margin 40px 0
+    padding 0
+    &:after
+      display block
+      content ''
+      width 7px
+      height 7px
+      border darken($bg-color, 12%) 1px solid
+      position relative
+      top -5px
+      left 50%
+      margin-left -5px
+      background darken($bg-color, 15%)
+      border-radius 100%
+      box-shadow $bg-color 0 0 0 5px
+  ul, ol, dl, table
+    margin 20px 0
+  ol ol, ul ul, ul ol, ol ul
+    margin 5px 0
+  dl dt
+    clear left
+    float left
+    font-weight bold
+    margin-bottom 12px
+    overflow hidden
+    text-align right
+    text-overflow ellipsis
+    white-space nowrap
+    width 180px
+  dl dd
+    margin-left 200px
+    margin-bottom 12px
+  blockquote
+    overflow auto
+    border-left #bd2f3b 3px solid
+    padding-left 2em
+    padding-right 2em
+    background darken($bg-color, 3%)
+    border-radius 5px
+    margin-left 0
+  img
+    border-radius 3px
+    height auto
+    margin-top 20px
+    max-width 70%
+  code
+    font-family Hack, monospace
+  p code,
+  li code
+    background #282828
+    border-radius 5px
+    color #fff
+    padding-left 5px
+    padding-right 5px
+    padding-top 3px
+    padding-bottom 3px
+  li
+    text-align left
+  .hljs
+    line-height 1.2em
+    border-radius 5px
+    padding-left 20px
+    padding-right 20px
