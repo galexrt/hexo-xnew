@@ -29,3 +29,12 @@ script.
             $(".article-toc").css("display", "none");
         }
     });
+    $('article').find('img').each(function(){
+    	if ($(this).parent().hasClass('fancybox')) {
+    	    return;
+    	}
+    	var alt = this.alt;
+
+    	$(this).wrap('<a href="#" title="' + alt + '" data-featherlight="' + this.src + '"></a>');
+    });
+script(src='https://cdnjs.cloudflare.com/ajax/libs/featherlight/1.7.6/featherlight.min.js')
