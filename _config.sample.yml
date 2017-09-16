@@ -30,3 +30,5 @@ show_home_post_categories: true
 googleanalytics:
 
 backgrounds: "images/header.jpeg"
+
+footer_note: "All rights reserved. All logos and/or trademarks are property of their respective owners in the US and other countries."
