@@ -29,6 +29,6 @@ show_home_post_categories: true
 
 googleanalytics:
 
-backgrounds: "images/header.jpeg"
+backgrounds: "images/backgrounds/01.jpg,images/backgrounds/02.jpg,images/backgrounds/03.jpg,images/backgrounds/04.jpg"
 
 footer_note: "All rights reserved. All logos and/or trademarks are property of their respective owners in the US and other countries."
