@@ -4,6 +4,8 @@ html(lang= theme["han_type"]).han-init
     include partial/_head.pug
     include _mixins.pug
   body
+    a(href="#" onclick="$('header').toggle();$('header').backstretch(_site_root + background);" title="Toggle Sidebar" class="sidebar-toggle")
+      i(class="fa fa-2x fa-caret-square-o-left")
     header
       include partial/_header.pug
       div.space

@@ -121,6 +121,8 @@ header
     z-index 1
 
 @media (min-width 1025px)
+  .sidebar-toggle
+    display block !important
   body
     header
       flex .55
@@ -377,3 +379,13 @@ article.full
           button.ds-post-button
             border-bottom-right-radius 5px
             -webkit-border-bottom-right-radius 5px
+
+.sidebar-toggle
+  position absolute
+  z-index 10
+  bottom 20px
+  left 20px
+  margin 4px
+  color #1f1ca2
+  size 10px
+  display none

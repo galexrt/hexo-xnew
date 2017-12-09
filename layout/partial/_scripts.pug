@@ -5,9 +5,9 @@ script(src= config.root + 'scripts/highlight.pack.js')
 script!= "var _site_root = \"" + config.root + "\";"
 script!= "var backgrounds = \"" + theme.backgrounds + "\";"
 script.
+    backgrounds = backgrounds.split(',')
+    var background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
     $(function() {
-        backgrounds = backgrounds.split(',')
-        var background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
         $("header").backstretch(_site_root + background);
 
         $("figure.highlight").each(function(i, block) {
