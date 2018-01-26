@@ -19,6 +19,7 @@ icon:
   weibo: YOUR_WEIBO_ID
   zhihu: YOUR_ZHIHU_ID
   xing:
+  linkedin:
 
 category_path: categories
 tags_path: tags
